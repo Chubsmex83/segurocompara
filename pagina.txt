@@ -1,0 +1,131 @@
+Crea una aplicación web completa en React (single-page app) sobre comparación y cotización de seguros en México. Divide la app en dos secciones principales:
+
+---
+
+## SECCIÓN 1 — COMPARADOR DE SEGUROS
+
+Crea una página editorial con diseño refinado tipo revista financiera (tema oscuro, tipografía serif para títulos, sans-serif para datos, paleta: negro profundo + dorado + blanco roto). Compara las siguientes categorías de seguros disponibles en México:
+
+- Seguro de Gastos Médicos Mayores (GMM)
+- Seguro de Vida
+- Seguro de Auto
+- Seguro de Casa / Hogar
+- Seguro de Retiro / Pensión
+- Seguro de Gastos Médicos Menores
+- Seguro de Viaje
+- Seguro de Negocio / PyME
+
+Para cada categoría muestra:
+1. **¿Qué cubre?** — descripción concisa
+2. **Principales aseguradoras en México** con sus pros/contras (GNP, AXA, Metlife, BBVA Seguros, Seguros Monterrey, Mapfre, HDI, Allianz, Zurich, Inbursa)
+3. **Costos aproximados** — rangos de primas mensuales/anuales
+4. **Beneficios clave** — tabla comparativa visual
+5. **¿A quién le conviene?** — perfil del asegurado ideal
+6. **Rating de conveniencia** — score visual (1-10) basado en: costo-beneficio, cobertura, servicio, red de hospitales/talleres
+
+Incluye un **sistema de recomendación inteligente**: el usuario responde 4-5 preguntas rápidas (edad, estado civil, dependientes, presupuesto mensual, prioridad principal) y la app muestra qué tipo de seguro contratar primero y por qué, con justificación clara.
+
+---
+
+## SECCIÓN 2 — COTIZADOR PROFESIONAL
+
+Crea un cotizador multi-paso (wizard de 6-8 pasos) que simule la experiencia de un agente de seguros certificado. Debe sentirse como una herramienta profesional real, no un formulario genérico.
+
+### Flujo del cotizador:
+
+**Paso 1 — Tipo de seguro**
+Selección visual con iconos: GMM, Vida, Auto, Casa, Retiro, Viaje, Negocio
+
+**Paso 2 — Datos personales**
+- Nombre completo
+- Fecha de nacimiento (calcula edad automáticamente)
+- Sexo
+- Estado civil
+- Código postal / Estado de residencia
+- RFC (opcional)
+- Ocupación / Actividad principal
+
+**Paso 3 — Preguntas de salud** (para GMM y Vida)
+- ¿Padece o ha padecido enfermedades crónicas? (diabetes, hipertensión, cáncer, etc.)
+- ¿Fuma o consume alcohol frecuentemente?
+- ¿Ha sido hospitalizado en los últimos 5 años?
+- ¿Toma medicamentos de forma permanente?
+- ¿Practica deportes de alto riesgo?
+- IMC (peso y talla)
+
+**Paso 4 — Preguntas específicas por tipo** (condicionales según selección):
+
+*Para Auto:*
+- Marca, modelo, año del vehículo
+- Uso (particular/comercial/uber)
+- ¿Tiene crédito activo sobre el vehículo?
+- Historial de siniestros (últimos 3 años)
+- Código postal de resguardo habitual
+- Tipo de cobertura deseada (amplia, limitada, RC)
+
+*Para Casa:*
+- Valor aproximado de la propiedad
+- ¿Propia o rentada?
+- Tipo de construcción
+- Contenidos a asegurar
+- ¿Tiene hipoteca activa?
+
+*Para Vida:*
+- Suma asegurada deseada
+- Número de dependientes económicos
+- Ingresos mensuales
+- ¿Busca cobertura temporal o permanente (vida entera)?
+
+*Para GMM:*
+- ¿Individual o familiar? (número de integrantes, edades)
+- Nivel hospitalario deseado (básico, intermedio, premium)
+- ¿Deducible preferido?
+- ¿Tiene seguro actual? (portabilidad)
+
+*Para Viaje:*
+- Destino (nacional / internacional / múltiple)
+- Fechas de viaje
+- Número de viajeros
+- ¿Necesita cobertura COVID?
+- Actividades a realizar
+
+**Paso 5 — Preferencias de cobertura**
+- Presupuesto mensual/anual disponible
+- Prioridad: ¿precio, cobertura amplia o red de servicio?
+- ¿Pago mensual, trimestral o anual?
+- ¿Quiere comparar solo aseguradoras AAA o todas?
+
+**Paso 6 — Resultados de cotización**
+Muestra un cuadro comparativo profesional con:
+- Top 3 opciones recomendadas (ordenadas por conveniencia)
+- Tabla con: Aseguradora | Prima anual | Prima mensual | Deducible | Coaseguro | Suma asegurada | Red | Score
+- Badge "MEJOR OPCIÓN" en la recomendación principal
+- Justificación escrita de por qué esa es la mejor opción para el perfil específico
+- Exclusiones importantes a considerar
+- Call to action: "Contactar agente" / "Descargar cotización PDF"
+
+---
+
+## ESPECIFICACIONES TÉCNICAS
+
+- React con hooks (useState, useEffect, useReducer para el wizard)
+- Animaciones fluidas entre pasos con transiciones suaves
+- Validación en tiempo real de todos los campos
+- Lógica de cotización basada en tablas de tarifas aproximadas reales del mercado mexicano 2024-2025
+- Diseño completamente responsivo (mobile-first)
+- Barra de progreso visual en el wizard
+- Los precios generados deben ser rangos realistas basados en datos del mercado mexicano real
+- Incluye tooltips explicativos en términos técnicos de seguros (deducible, coaseguro, suma asegurada, etc.)
+- Modo de comparación: el usuario puede agregar hasta 3 perfiles diferentes y comparar cotizaciones lado a lado
+- Los datos nunca salen de la app (cero backend requerido, todo client-side)
+
+## DISEÑO
+
+- Tema oscuro premium: fondo #0A0A0F, acentos dorados #C9A84C, texto #F0EDE8
+- Tipografía: Playfair Display para headings, DM Sans para UI
+- Tablas con hover states elegantes
+- Cards con glassmorphism sutil
+- Iconografía de seguros clara y profesional
+- Sensación de herramienta financiera de alto nivel, no de startup genérica
+
+Usa datos de mercado mexicano reales y actualizados para 2024-2025 en todos los rangos de precios y coberturas.
