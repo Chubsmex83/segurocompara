@@ -144,7 +144,7 @@ export default function Step6Resultados({ state, onReset, onPrev }) {
       </div>
 
       {/* Tabla comparativa */}
-      <div style={{ marginBottom: 24, overflowX: 'auto' }}>
+      <div style={{ marginBottom: 24, overflowX: 'auto', width: '100%', WebkitOverflowScrolling: 'touch' }}>
         <h3 style={{ fontSize: '1rem', marginBottom: 14, color: 'var(--text-secondary)', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
           Comparativa de las 3 opciones
         </h3>

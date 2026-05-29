@@ -6,7 +6,7 @@ export default function Header({ seccion, setSeccion }) {
   return (
     <header style={{
       position: 'sticky', top: 0, zIndex: 100,
-      background: 'rgba(10, 10, 15, 0.92)',
+      background: 'rgba(13, 34, 68, 0.96)',
       backdropFilter: 'blur(20px)',
       borderBottom: '1px solid var(--border)',
     }}>
@@ -30,8 +30,8 @@ export default function Header({ seccion, setSeccion }) {
           </span>
         </button>
 
-        {/* Nav tabs - desktop */}
-        <nav style={{ display: 'flex', gap: 4, background: 'rgba(255,255,255,0.04)', borderRadius: 10, padding: 4, border: '1px solid var(--border)' }}>
+        {/* Nav tabs */}
+        <nav style={{ display: 'flex', gap: 4, background: 'rgba(255,255,255,0.04)', borderRadius: 10, padding: 4, border: '1px solid var(--border)', flexShrink: 0 }}>
           {[
             { id: 'comparador', label: 'Comparador', icon: '📊' },
             { id: 'cotizador', label: 'Cotizador', icon: '📋' },
@@ -41,7 +41,7 @@ export default function Header({ seccion, setSeccion }) {
               onClick={() => setSeccion(tab.id)}
               style={{
                 background: seccion === tab.id ? 'linear-gradient(135deg, var(--gold) 0%, #A8832E 100%)' : 'transparent',
-                color: seccion === tab.id ? '#0A0A0F' : 'var(--text-secondary)',
+                color: seccion === tab.id ? '#0D2244' : 'var(--text-secondary)',
                 border: 'none',
                 borderRadius: 7,
                 padding: '8px 18px',
@@ -58,9 +58,9 @@ export default function Header({ seccion, setSeccion }) {
           ))}
         </nav>
 
-        {/* Badge */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span className="badge badge-gold" style={{ fontSize: '0.68rem' }}>
+        {/* Badge - hidden on small screens */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+          <span className="badge badge-gold" style={{ fontSize: '0.68rem', whiteSpace: 'nowrap' }}>
             🇲🇽 México 2025
           </span>
         </div>

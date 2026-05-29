@@ -7,7 +7,7 @@ export default function App() {
   const [seccion, setSeccion] = useState('comparador')
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg-primary)', overflowX: 'hidden' }}>
       <Header seccion={seccion} setSeccion={setSeccion} />
       <main>
         {seccion === 'comparador' && <ComparadorPage onCotizar={() => setSeccion('cotizador')} />}

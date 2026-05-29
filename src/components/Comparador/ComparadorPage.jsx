@@ -38,7 +38,7 @@ function CategoriaCard({ cat, onCotizar }) {
   return (
     <div className="glass-card animate-in" style={{ padding: 0, overflow: 'hidden', marginBottom: 24 }}>
       {/* Header */}
-      <div style={{ padding: '24px 28px', borderBottom: '1px solid var(--border)', cursor: 'pointer' }}
+      <div style={{ padding: '20px 16px', borderBottom: '1px solid var(--border)', cursor: 'pointer' }}
         onClick={() => setExpanded(!expanded)}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
@@ -73,9 +73,9 @@ function CategoriaCard({ cat, onCotizar }) {
 
       {/* Expanded content */}
       {expanded && (
-        <div style={{ padding: '0 28px 28px' }}>
+        <div style={{ padding: '0 16px 24px' }}>
           {/* Tabs */}
-          <div style={{ display: 'flex', gap: 4, padding: '16px 0', borderBottom: '1px solid var(--border)', marginBottom: 24 }}>
+          <div style={{ display: 'flex', gap: 4, padding: '16px 0', borderBottom: '1px solid var(--border)', marginBottom: 24, overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
             {['cobertura', 'aseguradoras', 'costos', 'ratings'].map(tab => (
               <button key={tab} onClick={() => setTabActiva(tab)} style={{
                 background: tabActiva === tab ? 'var(--gold-dim)' : 'transparent',
