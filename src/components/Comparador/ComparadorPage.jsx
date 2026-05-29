@@ -312,7 +312,7 @@ export default function ComparadorPage({ onCotizar }) {
         <div className="container" style={{ padding: '24px 24px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 32, textAlign: 'center' }}>
             {[
-              { valor: '10', label: 'Aseguradoras analizadas', icon: '🏦' },
+              { valor: '15', label: 'Aseguradoras analizadas', icon: '🏦' },
               { valor: '8', label: 'Categorías de seguros', icon: '📊' },
               { valor: '$0', label: 'Sin comisión ni parcialidad', icon: '✅' },
               { valor: '100%', label: 'Datos México 2025', icon: '🇲🇽' },
