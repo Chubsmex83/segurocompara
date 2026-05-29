@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { CATEGORIAS, ASEGURADORAS, GLOSARIO } from '../../data/segurosData'
 import RecomendadorInteligente from './RecomendadorInteligente'
+import CalculadoraPerdida from '../CalculadoraPerdida'
+import SimuladorEscenarios from '../SimuladorEscenarios'
+import GraficaEdadCosto from '../GraficaEdadCosto'
+import SegurosDesconocidos from '../SegurosDesconocidos'
+import Testimonios from '../Testimonios'
+import SeccionConfianza from '../SeccionConfianza'
 
 function Tooltip({ term }) {
   const [show, setShow] = useState(false)
@@ -374,6 +380,13 @@ export default function ComparadorPage({ onCotizar }) {
           ))
         }
       </div>
+
+      <CalculadoraPerdida onCotizar={onCotizar} />
+      <GraficaEdadCosto onCotizar={onCotizar} />
+      <SimuladorEscenarios onCotizar={onCotizar} />
+      <SegurosDesconocidos onCotizar={onCotizar} />
+      <Testimonios />
+      <SeccionConfianza />
     </div>
   )
 }

@@ -1,0 +1,217 @@
+Eres un equipo multidisciplinario de expertos actuando en 4 roles simultáneos. Analiza TODA la aplicación de comparación y cotización de seguros en México y ejecuta las siguientes fases en orden:
+
+---
+
+## ROL 1 — QA ENGINEER & AUDITOR TÉCNICO
+
+Revisa y corrige TODO lo siguiente sin excepción:
+
+**Funcionalidad:**
+- Ejecuta mentalmente cada flujo de usuario de principio a fin (comparador + cotizador wizard completo)
+- Verifica que CADA botón, input, selector y transición funcione correctamente
+- Confirma que la lógica condicional del wizard (preguntas que aparecen según el tipo de seguro) sea 100% correcta
+- Valida que los cálculos de cotización produzcan resultados coherentes y realistas
+- Verifica que la barra de progreso avance correctamente en cada paso
+- Confirma que el sistema de recomendación devuelva resultados lógicos según el perfil ingresado
+- Prueba casos extremos: usuario muy joven, muy mayor, vehículo muy antiguo, presupuesto mínimo, etc.
+
+**UI/UX:**
+- Verifica que TODOS los tooltips aparezcan y tengan contenido correcto
+- Confirma que las animaciones entre pasos no tengan flickering ni saltos
+- Revisa que los estados de hover, focus y active estén implementados en todos los elementos interactivos
+- Verifica accesibilidad básica: labels en inputs, contraste suficiente, navegación por teclado
+- Confirma que el diseño responsivo funcione en 320px, 768px y 1440px
+- Revisa que ningún texto esté cortado, desbordado o ilegible
+
+**Datos:**
+- Verifica que los rangos de precios sean realistas para el mercado mexicano 2024-2025
+- Confirma que las aseguradoras listadas (GNP, AXA, Metlife, BBVA Seguros, Seguros Monterrey, Mapfre, HDI, Allianz, Zurich, Inbursa) tengan información correcta y actualizada
+- Revisa que los términos técnicos (deducible, coaseguro, suma asegurada, prima) estén correctamente definidos
+
+Genera un reporte de bugs encontrados y corrígelos todos directamente en el código.
+
+---
+
+## ROL 2 — CONSULTOR DE NEGOCIOS & ANALISTA DE CONVERSIÓN
+
+Actúa como un consultor de negocios senior especializado en insurtech y mercado mexicano. Analiza la aplicación como si fuera a presentar un reporte a un consejo directivo:
+
+**Análisis de propuesta de valor:**
+- ¿Qué tan diferenciada está esta herramienta vs. comparadores existentes en México (Coru, Resuelve tu Deuda, comparadores de bancos)?
+- ¿Qué funcionalidades adicionales aumentarían significativamente la conversión?
+
+**Oportunidades de negocio detectadas — implementa las siguientes mejoras:**
+
+1. **Calculadora de "¿Cuánto pierdes sin seguro?"** — muestra el costo promedio de una hospitalización, accidente de auto o pérdida del hogar sin cobertura vs. el costo anual de un seguro. Genera urgencia real con datos duros del IMSS, CONDUSEF y AMIS.
+
+2. **Sección "Seguros que los mexicanos NO saben que necesitan"** — seguro de responsabilidad civil, seguro de mascotas, seguro de desempleo, seguro de invalidez. Contenido educativo que amplía el ticket promedio.
+
+3. **Simulador de escenarios de vida** — "¿Qué pasaría si...?" con 5 escenarios: accidente grave, pérdida de empleo, robo de auto, incendio en casa, fallecimiento del sostén de familia. Muestra el impacto financiero con y sin seguro.
+
+4. **Sección de testimonios y casos reales** — formato de historia corta con números reales: "María pagó $3,200/mes de GMM y evitó una deuda de $890,000 por su operación de corazón." Genera confianza y urgencia emocional.
+
+5. **Comparador de seguro propio vs. seguro del trabajo** — muchos mexicanos tienen IMSS o seguro de empresa y no saben si es suficiente. Crea una herramienta que compare la cobertura actual del usuario vs. una póliza privada.
+
+6. **Widget de "Mejor momento para contratar"** — explica por qué contratar joven es exponencialmente más barato. Muestra una gráfica de costo de prima por edad (25, 30, 35, 40, 45, 50 años) para GMM y Vida.
+
+7. **Sección de regulación y confianza** — Logo de CNSF (Comisión Nacional de Seguros y Fianzas), CONDUSEF, AMIS. Explica cómo funciona la regulación mexicana y qué derechos tiene el asegurado. Esto elimina fricción de desconfianza.
+
+8. **FAQ inteligente** — mínimo 20 preguntas frecuentes reales organizadas por categoría, con respuestas detalladas. Optimizado para SEO y para reducir dudas pre-compra.
+
+Implementa TODAS estas mejoras directamente en el código.
+
+---
+
+## ROL 3 — CLIENTE MISTERIOSO (USER EXPERIENCE AUDIT)
+
+Ahora actúa como 5 clientes diferentes visitando la página por primera vez. Para cada perfil, documenta los puntos de fricción, confusión o abandono que encontrarías, y corrígelos:
+
+**Cliente 1 — Roberto, 28 años, recién casado, primer carro**
+- Llega buscando "seguro de auto barato México"
+- No sabe la diferencia entre cobertura amplia y limitada
+- Tiene presupuesto ajustado ($600/mes máximo)
+- ¿Encuentra lo que necesita en menos de 90 segundos?
+
+**Cliente 2 — Patricia, 42 años, ama de casa con 3 hijos**
+- Llega porque su esposo tuvo un infarto y quieren contratar GMM familiar
+- Tiene miedo de que le rechacen por preexistencias
+- No entiende qué es coaseguro ni deducible
+- ¿La página la tranquiliza o la confunde?
+
+**Cliente 3 — Carlos, 55 años, empresario**
+- Busca seguro de vida con suma asegurada alta + seguro de negocio
+- Quiere comparar todo en una sola pantalla
+- Le molesta llenar muchos formularios
+- ¿Puede cotizar múltiples productos sin frustrarse?
+
+**Cliente 4 — Daniela, 22 años, estudiante que viajará a Europa**
+- Busca seguro de viaje de último momento (viaja en 5 días)
+- Presupuesto muy limitado
+- Compra desde celular
+- ¿La experiencia móvil es fluida y rápida?
+
+**Cliente 5 — Andrés, 35 años, escéptico digital**
+- Nunca ha comprado seguro en línea
+- Desconfía de dar sus datos
+- Quiere entender bien antes de comprometerse
+- ¿La página genera suficiente confianza?
+
+Para cada cliente: identifica los 3 principales problemas que encontraría y corrígelos en el código.
+
+---
+
+## ROL 4 — EXPERTO EN SEO TÉCNICO & CONTENIDO
+
+Implementa una estrategia SEO completa y agresiva para posicionar en Google México en las siguientes keywords primarias y secundarias:
+
+**Keywords primarias (alto volumen):**
+- "seguro de auto México"
+- "seguro de gastos médicos"
+- "seguro de vida México"
+- "cotizar seguro"
+- "comparador de seguros México"
+- "seguro de viaje"
+- "seguro de hogar México"
+- "seguro médico familiar"
+
+**Keywords secundarias (long-tail de alta conversión):**
+- "cuánto cuesta un seguro de gastos médicos mayores"
+- "mejor seguro de auto México 2025"
+- "seguro de vida barato en México"
+- "seguro médico sin preexistencias México"
+- "cotizar seguro de auto en línea"
+- "comparar seguros médicos México"
+- "seguro de hogar GNP vs AXA"
+- "seguro de viaje a Estados Unidos México"
+- "seguro de vida para familia numerosa"
+- "seguro de auto cobertura amplia precio"
+
+**Implementa TODO lo siguiente directamente en el código:**
+
+### SEO On-Page:
+
+**Meta tags completos en el `<head>`:**
+```html
+<title>Comparador de Seguros México 2025 | Cotiza GMM, Auto, Vida y Más</title>
+<meta name="description" content="Compara y cotiza seguros en México: Gastos Médicos, Auto, Vida, Hogar y Viaje. Encuentra el mejor seguro al mejor precio con nuestro cotizador profesional. GNP, AXA, Metlife y más.">
+<meta name="keywords" content="seguro de auto México, seguro de gastos médicos, cotizar seguro, comparador de seguros, seguro de vida, seguro médico familiar, seguro de hogar, seguro de viaje">
+<link rel="canonical" href="https://tudominio.com/">
+```
+
+**Open Graph para redes sociales:**
+```html
+<meta property="og:title" content="Comparador de Seguros México 2025 | Cotiza en Minutos">
+<meta property="og:description" content="Compara precios de GNP, AXA, Metlife, Mapfre y más. Cotiza tu seguro de auto, médico, vida o hogar gratis en 3 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+```
+
+**Schema.org Structured Data — implementa los siguientes schemas en JSON-LD:**
+
+1. `WebSite` con SearchAction (sitelinks search box)
+2. `FinancialProduct` para cada tipo de seguro
+3. `FAQPage` con todas las preguntas frecuentes
+4. `HowTo` para el proceso de cotización
+5. `Organization` con datos de la empresa
+6. `BreadcrumbList` para navegación
+7. `AggregateRating` con ratings de las aseguradoras
+8. `LocalBusiness` si aplica
+
+**Optimización de contenido:**
+- Cada sección debe tener H1, H2, H3 correctamente jerarquizados
+- H1 único: "Compara y Cotiza Seguros en México — Encuentra el Mejor Precio 2025"
+- H2 para cada tipo de seguro con la keyword exacta: "Seguro de Gastos Médicos Mayores en México", "Seguro de Auto en México", etc.
+- Densidad de keywords: 1.5-2.5% natural en todo el contenido
+- Texto alt descriptivo en TODAS las imágenes/iconos con keywords relevantes
+- URLs internas semánticas con anchors descriptivos
+- Internal linking entre secciones relacionadas
+
+**Core Web Vitals — optimiza:**
+- Lazy loading en imágenes y componentes pesados
+- Preload de fuentes críticas
+- Minimiza el Cumulative Layout Shift (CLS) — reserva espacio para elementos dinámicos
+- Reduce Time to Interactive: divide el bundle, carga el cotizador solo cuando el usuario scrollea a esa sección
+- Implementa `rel="preconnect"` para Google Fonts y recursos externos
+
+**Contenido SEO adicional — crea estas secciones:**
+
+1. **Blog/Guías integradas** (mínimo 3 artículos cortos embebidos en la página):
+   - "¿Cuánto cuesta un seguro de gastos médicos en México en 2025?" (1,200 palabras)
+   - "Seguro de auto: cobertura amplia vs. limitada — ¿Cuál te conviene?" (1,000 palabras)
+   - "Cómo elegir el mejor seguro de vida para tu familia en México" (1,000 palabras)
+   Cada artículo debe estar marcado con Schema `Article` y tener sus propios meta datos.
+
+2. **Sección de ciudades** — contenido específico para las 5 ciudades con mayor búsqueda:
+   - Ciudad de México, Guadalajara, Monterrey, Puebla, Tijuana
+   - "Seguro de auto en Monterrey", "GMM en CDMX", etc.
+   - Mención de particularidades locales (tráfico, hospitales de red, etc.)
+
+3. **Comparativas de marca** — páginas/secciones específicas para búsquedas de intención comercial alta:
+   - "GNP vs AXA — ¿Cuál seguro es mejor en México?"
+   - "Metlife vs Seguros Monterrey — Comparativa 2025"
+   - "Seguro de auto HDI vs Mapfre"
+
+**Velocidad y rendimiento:**
+- Agrega `<link rel="dns-prefetch">` para dominios externos
+- Implementa Service Worker básico para cache offline
+- Comprime y optimiza todos los assets inline
+- Implementa loading="lazy" en todos los elementos no críticos
+
+**Sitemap y robots:**
+- Genera un `sitemap.xml` completo con todas las URLs y prioridades
+- Genera `robots.txt` optimizado
+- Agrega meta robots correctos en cada sección
+
+---
+
+## ENTREGABLES FINALES
+
+Al terminar todas las fases, genera:
+
+1. **Reporte de QA** — lista de todos los bugs encontrados y corregidos
+2. **Reporte de mejoras de negocio** — resumen de las 8 mejoras implementadas con justificación de impacto en conversión
+3. **Reporte de UX por cliente** — problemas identificados por perfil y soluciones aplicadas
+4. **Reporte SEO** — checklist completo de todo lo implementado, keywords objetivo por sección, y estimación de posicionamiento a 3-6 meses
+5. **Score final de la aplicación** — calificación 1-100 en: Funcionalidad, UX, Diseño, Contenido, SEO, Potencial de negocio
+
+El código final debe ser production-ready, sin comentarios de TODO pendientes, sin placeholders de texto, y con todos los datos reales del mercado mexicano de seguros 2024-2025.
