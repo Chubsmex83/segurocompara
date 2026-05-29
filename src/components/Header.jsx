@@ -33,7 +33,7 @@ export default function Header({ seccion, setSeccion }) {
         {/* Nav tabs */}
         <nav style={{ display: 'flex', gap: 4, background: 'rgba(255,255,255,0.04)', borderRadius: 10, padding: 4, border: '1px solid var(--border)', flexShrink: 0 }}>
           {[
-            { id: 'comparador', label: 'Comparador', icon: '📊' },
+            { id: 'comparador', label: 'Seguros', icon: '📊' },
             { id: 'cotizador', label: 'Cotizador', icon: '📋' },
             { id: 'faq', label: 'FAQ', icon: '❓' },
           ].map(tab => (
