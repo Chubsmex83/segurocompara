@@ -114,11 +114,9 @@ export default function RecomendadorInteligente({ onCotizar }) {
                   {JUSTIFICACIONES[rec.id]}
                 </p>
               </div>
-              {idx === 0 && (
-                <button className="btn-gold-outline" onClick={onCotizar} style={{ flexShrink: 0, fontSize: '0.82rem' }}>
-                  Cotizar →
-                </button>
-              )}
+              <button className="btn-gold-outline" onClick={onCotizar} style={{ flexShrink: 0, fontSize: '0.82rem' }}>
+                Cotizar →
+              </button>
             </div>
           ))}
 
