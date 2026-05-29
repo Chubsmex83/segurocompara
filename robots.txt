@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chubsmex83.github.io/segurocompara/sitemap.xml
