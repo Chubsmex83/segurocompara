@@ -35,6 +35,7 @@ export default function Header({ seccion, setSeccion }) {
           {[
             { id: 'comparador', label: 'Comparador', icon: '📊' },
             { id: 'cotizador', label: 'Cotizador', icon: '📋' },
+            { id: 'faq', label: 'FAQ', icon: '❓' },
           ].map(tab => (
             <button
               key={tab.id}

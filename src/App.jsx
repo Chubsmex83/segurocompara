@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header'
 import ComparadorPage from './components/Comparador/ComparadorPage'
 import CotizadorWizard from './components/Cotizador/CotizadorWizard'
+import FAQ from './components/FAQ'
 
 export default function App() {
   const [seccion, setSeccion] = useState('comparador')
@@ -12,6 +13,7 @@ export default function App() {
       <main>
         {seccion === 'comparador' && <ComparadorPage onCotizar={() => setSeccion('cotizador')} />}
         {seccion === 'cotizador' && <CotizadorWizard />}
+        {seccion === 'faq' && <FAQ />}
       </main>
       <footer style={{
         borderTop: '1px solid var(--border)',
