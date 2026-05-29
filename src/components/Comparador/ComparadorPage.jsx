@@ -57,7 +57,12 @@ function CategoriaCard({ cat, onCotizar }) {
               <div style={{ fontSize: '1.6rem', fontFamily: 'var(--font-serif)', color: 'var(--gold)', fontWeight: 700, lineHeight: 1 }}>
                 {cat.scoreGeneral}
               </div>
-              <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>score</div>
+              <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                conveniencia
+              </div>
+              <div style={{ fontSize: '0.64rem', color: 'var(--text-muted)', marginTop: 2 }}>
+                ver ⭐ Ratings
+              </div>
             </div>
             <div style={{
               width: 32, height: 32, borderRadius: '50%',
@@ -198,32 +203,66 @@ function CategoriaCard({ cat, onCotizar }) {
 
           {/* Tab: Ratings */}
           {tabActiva === 'ratings' && (
-            <div className="grid-2" style={{ gap: 32 }}>
-              <div>
-                <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 20 }}>
-                  Rating de Conveniencia
-                </h4>
-                <ScoreBar label="Costo-Beneficio" value={cat.ratings.costoBeneficio} />
-                <ScoreBar label="Amplitud de Cobertura" value={cat.ratings.cobertura} />
-                <ScoreBar label="Calidad de Servicio" value={cat.ratings.servicio} />
-                <ScoreBar label="Red de Hospitales/Talleres" value={cat.ratings.red} />
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{
-                  width: 120, height: 120, borderRadius: '50%',
-                  border: '4px solid var(--gold)',
-                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                  background: 'var(--gold-dim)',
-                  boxShadow: 'var(--shadow-gold)',
-                }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.8rem', color: 'var(--gold)', fontWeight: 700, lineHeight: 1 }}>
-                    {cat.scoreGeneral}
-                  </div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: 2 }}>/ 10</div>
+            <div>
+              {/* Explicación metodología */}
+              <div style={{
+                padding: '14px 16px', borderRadius: 10, marginBottom: 24,
+                background: 'rgba(201,168,76,0.06)', border: '1px solid var(--gold-border)',
+              }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 8 }}>
+                  ¿Cómo se calcula el score?
                 </div>
-                <p style={{ marginTop: 16, fontSize: '0.82rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
-                  Score general de conveniencia
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: 10 }}>
+                  El <strong style={{ color: 'var(--text-primary)' }}>score de conveniencia (1–10)</strong> refleja qué tan recomendable es este tipo de seguro para el mexicano promedio. Se calcula con 4 criterios:
                 </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 8 }}>
+                  {[
+                    { icon: '💰', label: 'Costo-Beneficio', desc: 'Qué tan buena es la relación entre prima y protección real que recibes.' },
+                    { icon: '🛡️', label: 'Amplitud de Cobertura', desc: 'Qué tan completa y amplia es la protección que ofrece el seguro.' },
+                    { icon: '⭐', label: 'Calidad de Servicio', desc: 'Tiempos de respuesta y facilidad para hacer reclamaciones.' },
+                    { icon: '🏥', label: 'Red de Servicio', desc: 'Tamaño y calidad de hospitales, talleres o prestadores afiliados.' },
+                  ].map((c, i) => (
+                    <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                      <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: 1 }}>{c.icon}</span>
+                      <div>
+                        <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>{c.label}</div>
+                        <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{c.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginTop: 10 }}>
+                  * El score es independiente de la aseguradora y evalúa el <em>tipo de seguro</em>, no un producto específico.
+                </p>
+              </div>
+
+              <div className="grid-2" style={{ gap: 32 }}>
+                <div>
+                  <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 20 }}>
+                    Desglose por criterio
+                  </h4>
+                  <ScoreBar label="Costo-Beneficio" value={cat.ratings.costoBeneficio} />
+                  <ScoreBar label="Amplitud de Cobertura" value={cat.ratings.cobertura} />
+                  <ScoreBar label="Calidad de Servicio" value={cat.ratings.servicio} />
+                  <ScoreBar label="Red de Hospitales/Talleres" value={cat.ratings.red} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{
+                    width: 120, height: 120, borderRadius: '50%',
+                    border: '4px solid var(--gold)',
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                    background: 'var(--gold-dim)',
+                    boxShadow: 'var(--shadow-gold)',
+                  }}>
+                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.8rem', color: 'var(--gold)', fontWeight: 700, lineHeight: 1 }}>
+                      {cat.scoreGeneral}
+                    </div>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: 2 }}>/ 10</div>
+                  </div>
+                  <p style={{ marginTop: 16, fontSize: '0.82rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+                    Score general de conveniencia
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -300,7 +339,7 @@ export default function ComparadorPage({ onCotizar }) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
           <div>
             <p className="section-eyebrow">Análisis completo</p>
-            <h2 style={{ fontSize: '1.8rem' }}>Comparativa por categoría</h2>
+            <h2 style={{ fontSize: '1.8rem' }}>Categorías de Seguros</h2>
           </div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <button
